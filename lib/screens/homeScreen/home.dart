@@ -1,3 +1,4 @@
+import 'package:dsc_client/screens/Medium%20Page/ArticlesPage.dart';
 import 'package:dsc_client/screens/dscScreen/aboutDSC.dart';
 import 'package:dsc_client/screens/requestEvents/requestEvent.dart';
 import 'package:dsc_client/screens/dscScreen/team.dart';
@@ -68,7 +69,7 @@ class _HomeState extends State<Home> {
                           backgroundColor: Colors.transparent,
                           context: context,
                           builder: (context) => Container(
-                            height: 240,
+                            height: 280,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
@@ -120,6 +121,18 @@ class _HomeState extends State<Home> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) => Team()));
+                                  },
+                                ),
+                                ListTile(
+                                  title: Text("Medium Articles",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(color: Colors.black)),
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ArticlesPage()));
                                   },
                                 ),
                                 ListTile(
