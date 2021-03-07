@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../constants.dart';
 
 class EventDetails extends StatefulWidget {
-  final EventModel eventDetails;
+  final EventModel? eventDetails;
   EventDetails({this.eventDetails});
 
   @override
@@ -18,7 +18,7 @@ class EventDetails extends StatefulWidget {
 
 class _EventDetailsState extends State<EventDetails> {
   int slideIndex = 0;
-  PageController controller;
+  PageController? controller;
   @override
   void initState() {
     super.initState();
@@ -27,7 +27,7 @@ class _EventDetailsState extends State<EventDetails> {
 
   @override
   void dispose() {
-    controller.dispose();
+    controller!.dispose();
     super.dispose();
   }
 
@@ -55,7 +55,7 @@ class _EventDetailsState extends State<EventDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AutoSizeText(
-                        widget.eventDetails.eventTitle,
+                        widget.eventDetails!.eventTitle!,
                         minFontSize: 12,
                         maxLines: 2,
                         style: TextStyle(
@@ -77,11 +77,11 @@ class _EventDetailsState extends State<EventDetails> {
                         ),
                       ),
                       AutoSizeText(
-                        widget.eventDetails.eventDay != null
-                            ? widget.eventDetails.eventDay +
-                                ", ${widget.eventDetails.eventDate}, ${widget.eventDetails.eventTime}"
+                        widget.eventDetails!.eventDay != null
+                            ? widget.eventDetails!.eventDay! +
+                                ", ${widget.eventDetails!.eventDate}, ${widget.eventDetails!.eventTime}"
                             : "" +
-                                "${widget.eventDetails.eventDate}, ${widget.eventDetails.eventTime}",
+                                "${widget.eventDetails!.eventDate}, ${widget.eventDetails!.eventTime}",
                         minFontSize: 10,
                         style: TextStyle(
                           color: Colors.white,
@@ -207,7 +207,7 @@ class _EventDetailsState extends State<EventDetails> {
                               border: Border.all(width: 1, color: Colors.white),
                             ),
                             child: AutoSizeText(
-                              "#${widget.eventDetails.eventHashTag}",
+                              "#${widget.eventDetails!.eventHashTag}",
                               minFontSize: 10,
                               style: TextStyle(
                                 color: Colors.white,
@@ -218,7 +218,7 @@ class _EventDetailsState extends State<EventDetails> {
                           ),
                           GestureDetector(
                             onTap: () async {
-                              String url = widget.eventDetails.eventURL;
+                              String url = widget.eventDetails!.eventURL!;
                               if (await canLaunch(url)) {
                                 await launch(url);
                               } else {
@@ -282,7 +282,7 @@ class _EventDetailsState extends State<EventDetails> {
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 16),
                         child: AutoSizeText(
-                          widget.eventDetails.eventDesc,
+                          widget.eventDetails!.eventDesc!,
                           minFontSize: 12,
                           textAlign: TextAlign.justify,
                           style: TextStyle(
@@ -293,13 +293,13 @@ class _EventDetailsState extends State<EventDetails> {
                         ),
                       ),
                     ),
-                    widget.eventDetails.secondPagePoints != null
+                    widget.eventDetails!.secondPagePoints != null
                         ? Column(
                             children: [
                               Container(
                                 margin: EdgeInsets.symmetric(horizontal: 16),
                                 child: AutoSizeText(
-                                  widget.eventDetails.secondPageSubHeading,
+                                  widget.eventDetails!.secondPageSubHeading!,
                                   minFontSize: 12,
                                   textAlign: TextAlign.justify,
                                   style: TextStyle(
@@ -315,14 +315,14 @@ class _EventDetailsState extends State<EventDetails> {
                                   thickness: 4,
                                   child: ListView.builder(
                                     itemCount: widget
-                                        .eventDetails.secondPagePoints.length,
+                                        .eventDetails!.secondPagePoints!.length,
                                     itemBuilder: (context, index) {
                                       return Container(
                                         margin: EdgeInsets.all(8),
                                         padding: EdgeInsets.only(left: 10),
                                         child: AutoSizeText(
-                                          widget.eventDetails
-                                              .secondPagePoints[index],
+                                          widget.eventDetails!
+                                              .secondPagePoints![index],
                                         ),
                                       );
                                     },
@@ -339,13 +339,13 @@ class _EventDetailsState extends State<EventDetails> {
                               ),
                             ),
                           ),
-                    widget.eventDetails.thirdPagePoints != null
+                    widget.eventDetails!.thirdPagePoints != null
                         ? Column(
                             children: [
                               Container(
                                 margin: EdgeInsets.symmetric(horizontal: 16),
                                 child: AutoSizeText(
-                                  widget.eventDetails.thirdPageSubHeading,
+                                  widget.eventDetails!.thirdPageSubHeading!,
                                   minFontSize: 12,
                                   textAlign: TextAlign.justify,
                                   style: TextStyle(
@@ -361,14 +361,14 @@ class _EventDetailsState extends State<EventDetails> {
                                   thickness: 4,
                                   child: ListView.builder(
                                     itemCount: widget
-                                        .eventDetails.secondPagePoints.length,
+                                        .eventDetails!.secondPagePoints!.length,
                                     itemBuilder: (context, index) {
                                       return Container(
                                         margin: EdgeInsets.all(8),
                                         padding: EdgeInsets.only(left: 10),
                                         child: AutoSizeText(
-                                          widget.eventDetails
-                                              .secondPagePoints[index],
+                                          widget.eventDetails!
+                                              .secondPagePoints![index],
                                         ),
                                       );
                                     },

@@ -1,6 +1,6 @@
 import 'package:dsc_client/screens/dscScreen/aboutDSC.dart';
 import 'package:dsc_client/screens/requestEvents/requestEvent.dart';
-import 'package:dsc_client/screens/dscScreen/team.dart';
+import 'package:dsc_client/screens/team/team.dart';
 import 'package:dsc_client/screens/eventsScreen/PastEventsPage.dart';
 import 'package:dsc_client/screens/eventsScreen/UpcomingEventsPage.dart';
 import 'package:flutter/material.dart';

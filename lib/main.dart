@@ -13,7 +13,8 @@ bool isHomeScreen = true;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  isHomeScreen = await CustomSharedPreferences.get("IS_FIRST_TIME_RUN") ?? true;
+  isHomeScreen =
+      await (CustomSharedPreferences.get("IS_FIRST_TIME_RUN")) ?? true;
 
   runApp(DSC());
 }
@@ -33,7 +34,7 @@ class DSC extends StatelessWidget {
           textTheme: TextTheme().copyWith(
             headline6: Theme.of(context)
                 .primaryTextTheme
-                .headline6
+                .headline6!
                 .copyWith(color: MyColors.primaryColor),
           ),
         ),

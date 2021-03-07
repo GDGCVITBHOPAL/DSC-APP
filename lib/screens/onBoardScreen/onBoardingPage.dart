@@ -15,7 +15,7 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   List<SliderModel> mySLides = <SliderModel>[];
   int slideIndex = 0;
-  PageController controller;
+  PageController? controller;
   @override
   void initState() {
     super.initState();
@@ -48,7 +48,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
                         onTap: () {
-                          controller.animateToPage(2,
+                          controller!.animateToPage(2,
                               duration: Duration(milliseconds: 400),
                               curve: Curves.linear);
                         },
@@ -156,7 +156,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 }
 
 class SlideTile extends StatelessWidget {
-  final String imagePath, title, desc;
+  final String? imagePath, title, desc;
   final bool isFirst;
 
   SlideTile({this.imagePath, this.title, this.desc, this.isFirst = false});
@@ -172,7 +172,7 @@ class SlideTile extends StatelessWidget {
           Hero(
             tag: "logo",
             child: Image.asset(
-              imagePath,
+              imagePath!,
               scale: isFirst ? 3 : 1,
             ),
           ),
@@ -180,7 +180,7 @@ class SlideTile extends StatelessWidget {
             height: 8,
           ),
           AutoSizeText(
-            title,
+            title!,
             minFontSize: 15,
             maxLines: 1,
             style: TextStyle(
@@ -190,7 +190,7 @@ class SlideTile extends StatelessWidget {
             ),
           ),
           Text(
-            desc,
+            desc!,
             style: TextStyle(
                 fontSize: 12, fontWeight: FontWeight.w400, color: Colors.white),
           ),

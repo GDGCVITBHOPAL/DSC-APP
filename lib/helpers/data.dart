@@ -7,20 +7,21 @@ class Data {
   List<TeamMember> teamMembers = <TeamMember>[];
 
   Future<void> getTeamData(String teamName) async {
+    const String host = "raw.githubusercontent.com";
     String coreTeamUri =
-        "https://raw.githubusercontent.com/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team.json";
+        "/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team.json";
     String androidTeamUri =
-        "https://raw.githubusercontent.com/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/android-team.json";
+        "/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/android-team.json";
     String contentTeamUri =
-        "https://raw.githubusercontent.com/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/content-team.json";
+        "/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/content-team.json";
     String designTeamUri =
-        "https://raw.githubusercontent.com/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/design-team.json";
+        "/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/design-team.json";
     String managementTeamUri =
-        "https://raw.githubusercontent.com/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/management-team.json";
+        "/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/management-team.json";
     String mlTeamUri =
-        "https://raw.githubusercontent.com/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/ml-team.json";
+        "/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/ml-team.json";
     String webTeamUri =
-        "https://raw.githubusercontent.com/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/web-team.json";
+        "/DSCVITBHOPAL/dscvitbhopal.github.io/master/data/team/web-team.json";
 
     String url = coreTeamUri;
     if (teamName == ANDROID_TEAM) {
@@ -39,7 +40,7 @@ class Data {
       url = coreTeamUri;
     }
 
-    var response = await http.get(url);
+    var response = await http.get(Uri.https(host, url, {'q': '{http}'}));
     print(response);
     var jsonData = jsonDecode(response.body);
     print("From Data:  $jsonData");
