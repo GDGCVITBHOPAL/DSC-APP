@@ -13,7 +13,7 @@ class PastEventsPage extends StatefulWidget {
 class _PastEventsPageState extends State<PastEventsPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  FirebaseFirestore _firebaseFirestore;
+  late FirebaseFirestore _firebaseFirestore;
 
   List<EventModel> _events = [];
   @override
@@ -31,16 +31,16 @@ class _PastEventsPageState extends State<PastEventsPage> {
     qurey.snapshots().forEach((element) {
       element.docs.forEach((event) {
         EventModel events = EventModel();
-        events.eventDesc = event.data()['description'];
-        events.eventName = event.data()['title'];
-        events.eventDate = event.data()['time'];
-        events.eventDay = event.data()['eventDay'];
-        events.eventHashTag = event.data()['eventHashtag'];
-        events.eventMoreInfoLink = event.data()['urlToEvent'];
-        events.eventPoster = event.data()['imageUrl'];
-        events.eventTime = event.data()['time'];
-        events.eventTitle = event.data()['title'];
-        events.eventURL = event.data()['urlToEvent'];
+        events.eventDesc = event.data()!['description'];
+        events.eventName = event.data()!['title'];
+        events.eventDate = event.data()!['time'];
+        events.eventDay = event.data()!['eventDay'];
+        events.eventHashTag = event.data()!['eventHashtag'];
+        events.eventMoreInfoLink = event.data()!['urlToEvent'];
+        events.eventPoster = event.data()!['imageUrl'];
+        events.eventTime = event.data()!['time'];
+        events.eventTitle = event.data()!['title'];
+        events.eventURL = event.data()!['urlToEvent'];
         setState(() {
           _events.add(events);
         });
@@ -107,7 +107,7 @@ class _PastEventsPageState extends State<PastEventsPage> {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   AutoSizeText(
-                                    _events[index].eventTitle,
+                                    _events[index].eventTitle!,
                                     minFontSize: 12,
                                     style: TextStyle(
                                       fontSize: 18,
@@ -118,10 +118,10 @@ class _PastEventsPageState extends State<PastEventsPage> {
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10),
                                     child: AutoSizeText(
-                                      _events[index].eventDesc,
+                                      _events[index].eventDesc!,
                                     ),
                                   ),
-                                  Text(_events[index].eventTime),
+                                  Text(_events[index].eventTime!),
                                 ],
                               ),
                             ),

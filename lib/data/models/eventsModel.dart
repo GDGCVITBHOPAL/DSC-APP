@@ -24,23 +24,23 @@ class EventModel {
       this.secondPagePoints,
       this.thirdPagePoints});
 
-  int id;
-  String eventName;
-  String eventTitle;
-  String eventHashTag;
-  String eventDesc;
-  String eventDate;
-  String eventTime;
-  String eventMoreInfoLink;
-  String eventPoster;
-  String eventDay;
-  String eventURL;
-  String secondPageHeading;
-  String secondPageSubHeading;
-  String thirdPageHeading;
-  String thirdPageSubHeading;
-  List<String> secondPagePoints;
-  List<String> thirdPagePoints;
+  int? id;
+  String? eventName;
+  String? eventTitle;
+  String? eventHashTag;
+  String? eventDesc;
+  String? eventDate;
+  String? eventTime;
+  String? eventMoreInfoLink;
+  String? eventPoster;
+  String? eventDay;
+  String? eventURL;
+  String? secondPageHeading;
+  String? secondPageSubHeading;
+  String? thirdPageHeading;
+  String? thirdPageSubHeading;
+  List<String>? secondPagePoints;
+  List<String>? thirdPagePoints;
 
   factory EventModel.fromJson(Map<String, dynamic> json) => EventModel(
         id: json["id"],

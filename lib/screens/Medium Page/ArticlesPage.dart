@@ -44,7 +44,8 @@ class _ArticlesPageState extends State<ArticlesPage> {
                     flex: 1,
                     child: Container(
                       padding: EdgeInsets.only(top: 10),
-                      child: Center(child: Image.asset(
+                      child: Center(
+                          child: Image.asset(
                         "assets/images/logo.png",
                         height: 80,
                       )),
@@ -63,10 +64,10 @@ class _ArticlesPageState extends State<ArticlesPage> {
                               physics: ClampingScrollPhysics(),
                               itemBuilder: (context, index) {
                                 return ArticleTile(
-                                  author: articles[index].author,
-                                  title: articles[index].title,
-                                  url: articles[index].url,
-                                  urlToImage: articles[index].urlToImage,
+                                  author: articles[index].author!,
+                                  title: articles[index].title!,
+                                  url: articles[index].url!,
+                                  urlToImage: articles[index].urlToImage!,
                                 );
                               }),
                         ),

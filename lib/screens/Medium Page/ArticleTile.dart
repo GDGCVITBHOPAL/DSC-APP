@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ArticleTile extends StatelessWidget {
-  final String title, url, urlToImage, author;
+  final String? title, url, urlToImage, author;
   ArticleTile({this.title, this.url, this.urlToImage, this.author});
 
   @override
@@ -23,7 +23,7 @@ class ArticleTile extends StatelessWidget {
           child: Container(
             child: Stack(
               children: [
-                Image.network(urlToImage,
+                Image.network(urlToImage!,
                     height: 200,
                     width: MediaQuery.of(context).size.width,
                     fit: BoxFit.cover,
@@ -41,7 +41,7 @@ class ArticleTile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          title,
+                          title!,
                           style: TextStyle(
                               fontSize: 18,
                               color: Colors.white,
@@ -50,7 +50,7 @@ class ArticleTile extends StatelessWidget {
                         SizedBox(
                           height: 15,
                           child: Text(
-                            author,
+                            author!,
                             style: TextStyle(
                                 fontSize: 13,
                                 color: Colors.white,
