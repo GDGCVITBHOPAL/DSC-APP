@@ -9,9 +9,8 @@ class Loading extends StatelessWidget {
     return Container(
       color: Colors.transparent,
       child: Center(
-        child: SpinKitCubeGrid(
-          color: Colors.blue,
-          size: 50.0,
+        child: CircularProgressIndicator(
+          color: Colors.yellow.shade400,
         ),
       ),
     );
