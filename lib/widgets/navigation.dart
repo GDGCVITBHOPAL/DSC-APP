@@ -31,7 +31,7 @@ class _navigateState extends State<navigate> {
               children: [
                  DrawerHeader(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    // color: Colors.white,
                   ),
                   child: Image.asset(Assets.vitb_dsc_logo),
                 ),
@@ -61,7 +61,6 @@ class _navigateState extends State<navigate> {
           child: Image.asset(Assets.vitb_dsc_logo),
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
       ),
       body: screens[index],
       bottomNavigationBar: NavigationBarTheme(

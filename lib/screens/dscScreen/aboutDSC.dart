@@ -19,7 +19,6 @@ class _AboutDSCState extends State<AboutDSC> {
           child: Image.asset(Assets.vitb_dsc_logo),
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
       ),
       body: SafeArea(
         child: Column(

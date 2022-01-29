@@ -69,19 +69,23 @@ class _PastEventsPageState extends State<PastEventsPage> {
                           right: 8.0,
                           bottom: _events.length - 1 == index ? 100 : 8.0),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.grey
+                        ),
+                        // color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade400,
-                            blurRadius: 10.0, // soften the shadow
-                            spreadRadius: 0.0, //extend the shadow
-                            offset: Offset(
-                              0.0, // Move to right 10  horizontally
-                              5.0, // Move to bottom 10 Vertically
-                            ),
-                          )
-                        ],
+
+                        // boxShadow: [
+                        //   // BoxShadow(
+                        //   //   color: Colors.grey.shade400,
+                        //   //   blurRadius: 10.0, // soften the shadow
+                        //   //   spreadRadius: 0.0, //extend the shadow
+                        //   //   offset: Offset(
+                        //   //     0.0, // Move to right 10  horizontally
+                        //   //     5.0, // Move to bottom 10 Vertically
+                        //   //   ),
+                        //   // )
+                        // ],
                       ),
                       child: InkWell(
                         onTap: () {
