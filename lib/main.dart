@@ -1,4 +1,5 @@
 import 'package:dsc_client/utils/sharedPreferences.dart';
+import 'package:dsc_client/widgets/navigation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -53,13 +54,13 @@ class DSC extends StatelessWidget {
                 settings: settings);
           case '/home':
             return PageRouteBuilder(
-                pageBuilder: (_, a1, a2) => Home(), settings: settings);
+                pageBuilder: (_, a1, a2) => navigate(), settings: settings);
           case '/eventDetails':
             return PageRouteBuilder(
                 pageBuilder: (_, a1, a2) => EventDetails(), settings: settings);
           default:
             return PageRouteBuilder(
-              pageBuilder: (_, a1, a2) => Home(),
+              pageBuilder: (_, a1, a2) => navigate(),
               settings: settings,
             );
         }
