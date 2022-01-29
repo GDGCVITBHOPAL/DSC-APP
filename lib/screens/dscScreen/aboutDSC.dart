@@ -10,21 +10,21 @@ class _AboutDSCState extends State<AboutDSC> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 80,
+        elevation: 0,
+        title:
+        Container(
+          height: 80,
+          child: Image.asset(Assets.vitb_dsc_logo),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                child: Center(
-                  child: Image.asset(
-                    Assets.vitb_dsc_logo,
-                    fit: BoxFit.fitWidth,
-                  ),
-                ),
-              ),
-            ),
             Expanded(
               flex: 1,
               child: Padding(
