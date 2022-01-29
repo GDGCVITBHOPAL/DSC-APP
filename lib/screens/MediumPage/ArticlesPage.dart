@@ -1,4 +1,4 @@
-import 'package:dsc_client/screens/Medium%20Page/Articles.dart';
+import 'package:dsc_client/screens/MediumPage/Articles.dart';
 import 'package:dsc_client/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'ArticleTile.dart';
