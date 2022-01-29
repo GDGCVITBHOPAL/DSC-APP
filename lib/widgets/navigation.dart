@@ -1,3 +1,4 @@
+import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/screens/MediumPage/ArticlesPage.dart';
 import 'package:dsc_client/screens/homeScreen/home.dart';
 import 'package:dsc_client/screens/requestEvents/requestEvent.dart';
@@ -17,6 +18,16 @@ class _navigateState extends State<navigate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 80,
+        elevation: 0,
+        title:
+      Container(
+          height: 80,
+          child: Center(child: Image.asset(Assets.vitb_dsc_logo)),
+        ),
+        backgroundColor: Colors.white,
+      ),
       body: screens[index],
       bottomNavigationBar: NavigationBarTheme(data:
       NavigationBarThemeData(

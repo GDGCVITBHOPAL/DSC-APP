@@ -57,12 +57,6 @@ class _PastEventsPageState extends State<PastEventsPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              flex: 1,
-              child: Container(
-                child: Center(child: Image.asset(Assets.vitb_dsc_logo)),
-              ),
-            ),
-            Expanded(
               flex: 8,
               child: Container(
                 child: ListView.builder(

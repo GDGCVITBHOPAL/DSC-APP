@@ -41,20 +41,6 @@ class _ArticlesPageState extends State<ArticlesPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    flex: 1,
-                    child: Container(
-                      padding: EdgeInsets.only(top: 10),
-                      child: Center(
-                          child: Image.asset(
-                        "assets/images/logo.png",
-                        height: 80,
-                      )),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Expanded(
                       flex: 8,
                       child: SingleChildScrollView(
                         child: Container(
