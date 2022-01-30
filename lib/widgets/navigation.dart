@@ -66,7 +66,7 @@ class _navigateState extends State<navigate> {
       bottomNavigationBar: NavigationBarTheme(
         data:
       NavigationBarThemeData(
-        indicatorColor: Colors.blue.shade100,
+        indicatorColor: Colors.blue.shade200,
         // iconTheme: MaterialStateProperty(),
         height: 60,
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,

@@ -26,28 +26,25 @@ class DSC extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: Constants.title,
-      theme: ThemeData(
-        // primaryColor: MyColors.primaryColor,
-        // accentColor: MyColors.accentColor,
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(color: Colors.white).copyWith(
-          iconTheme: IconThemeData(color: Colors.black),),
 
-          // textTheme: TextTheme().copyWith(
-          //   headline6: Theme.of(context)
-          //       .primaryTextTheme
-          //       .headline6!
-          //       .copyWith(color: MyColors.primaryColor),
-          // ),
-        ),
-        // textTheme: TextTheme(
-        //     headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-        //     headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-        //     bodyText2:
-        //         GoogleFonts.quicksand(textStyle: TextStyle(fontSize: 14.0))),
-    darkTheme: ThemeData(
-    brightness: Brightness.dark,),
-    themeMode: ThemeMode.system,
+      //App Theming
+      theme: ThemeData(
+        brightness: Brightness.light,    //light mode uses white app color and black font color
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: AppBarTheme(
+            color: Colors.white,
+        iconTheme: IconThemeData(color: Colors.grey.shade800))
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,    //dark mode uses grey app color and white font color
+        scaffoldBackgroundColor: Color(0xff404040),
+          appBarTheme: AppBarTheme(
+              color: Color(0xff404040),
+              iconTheme: IconThemeData(color: Colors.white))
+      ),
+      themeMode: ThemeMode.system,
+
+
       initialRoute: isHomeScreen ? '/' : '/home',
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
