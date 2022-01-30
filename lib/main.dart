@@ -1,8 +1,6 @@
 import 'package:dsc_client/utils/sharedPreferences.dart';
-import 'package:dsc_client/widgets/navigation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'screens/eventDetails/eventDetails.dart';
 import 'constants.dart';
 import 'screens/homeScreen/home.dart';
@@ -28,21 +26,23 @@ class DSC extends StatelessWidget {
 
       //App Theming
       theme: ThemeData(
-        brightness: Brightness.light,    //light mode uses white app color and black font color
-          scaffoldBackgroundColor: Colors.white,
-          appBarTheme: AppBarTheme(
-            color: Colors.white,
-        iconTheme: IconThemeData(color: Colors.grey.shade800))
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.white,
+        primaryColor: Color(0xff4285F4),
+        appBarTheme: AppBarTheme(
+          color: Colors.white,
+        ),
       ),
       darkTheme: ThemeData(
-        brightness: Brightness.dark,    //dark mode uses grey app color and white font color
-        scaffoldBackgroundColor: Color(0xff404040),
-          appBarTheme: AppBarTheme(
-              color: Color(0xff404040),
-              iconTheme: IconThemeData(color: Colors.white))
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Color(0xff111111),
+        primaryColor: Color(0xff4075E0),
+        cardColor: Color(0xff1A1A1A),
+        appBarTheme: AppBarTheme(
+          color: Color(0xff111111),
+        ),
       ),
       themeMode: ThemeMode.system,
-
 
       initialRoute: isHomeScreen ? '/' : '/home',
       onGenerateRoute: (RouteSettings settings) {
@@ -53,13 +53,13 @@ class DSC extends StatelessWidget {
                 settings: settings);
           case '/home':
             return PageRouteBuilder(
-                pageBuilder: (_, a1, a2) => navigate(), settings: settings);
+                pageBuilder: (_, a1, a2) => Home(), settings: settings);
           case '/eventDetails':
             return PageRouteBuilder(
                 pageBuilder: (_, a1, a2) => EventDetails(), settings: settings);
           default:
             return PageRouteBuilder(
-              pageBuilder: (_, a1, a2) => navigate(),
+              pageBuilder: (_, a1, a2) => Home(),
               settings: settings,
             );
         }

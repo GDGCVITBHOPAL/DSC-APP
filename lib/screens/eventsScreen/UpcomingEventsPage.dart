@@ -46,14 +46,15 @@ class _UpcomingEventsPageState extends State<UpcomingEventsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: ListView.separated(
-            itemBuilder: (context, index) {
-              return EventCard(event: _events[index]);
-            },
-            separatorBuilder: (context, index) => SizedBox(
-                  height: 10.0,
-                ),
-            itemCount: _events.length));
+    return Container(
+      child: ListView.separated(
+          itemBuilder: (context, index) {
+            return EventCard(event: _events[index]);
+          },
+          separatorBuilder: (context, index) => SizedBox(
+                height: 2.0,
+              ),
+          itemCount: _events.length),
+    );
   }
 }
