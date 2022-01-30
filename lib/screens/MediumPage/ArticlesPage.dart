@@ -1,4 +1,4 @@
-import 'package:dsc_client/screens/Medium%20Page/Articles.dart';
+import 'package:dsc_client/screens/MediumPage/Articles.dart';
 import 'package:dsc_client/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'ArticleTile.dart';
@@ -40,20 +40,6 @@ class _ArticlesPageState extends State<ArticlesPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      padding: EdgeInsets.only(top: 10),
-                      child: Center(
-                          child: Image.asset(
-                        "assets/images/logo.png",
-                        height: 80,
-                      )),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
                   Expanded(
                       flex: 8,
                       child: SingleChildScrollView(
