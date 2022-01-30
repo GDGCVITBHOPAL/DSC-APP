@@ -1,6 +1,5 @@
 import 'package:dsc_client/utils/sharedPreferences.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/eventDetails/eventDetails.dart';
