@@ -33,7 +33,9 @@ dependencies:
   http: ^0.13.0
   shared_preferences: ^2.0.3
   url_launcher: ^6.0.2
-
+  firebase_auth: ^3.3.6
+  google_sign_in: ^5.2.3
+  provider: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
