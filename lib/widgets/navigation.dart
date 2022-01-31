@@ -5,6 +5,7 @@ import 'package:dsc_client/screens/homeScreen/home.dart';
 import 'package:dsc_client/screens/requestEvents/requestEvent.dart';
 import 'package:dsc_client/screens/team/team.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class navigate extends StatefulWidget {
   const navigate({Key? key}) : super(key: key);
@@ -16,7 +17,8 @@ class navigate extends StatefulWidget {
 class _navigateState extends State<navigate> {
   int current_index = 0;
   final screens = [Home(), ArticlesPage(), RequestEventForm()];
-
+  //Google User data
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +62,17 @@ class _navigateState extends State<navigate> {
           child: Image.asset(Assets.vitb_dsc_logo),
         ),
         centerTitle: true,
+        actions: [
+          GestureDetector(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(user.photoURL!),
+              ),
+            ),
+            onTap: () {},
+          )
+        ],
       ),
       body: IndexedStack(
         children: screens,
