@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../widgets/navigation.dart';
-import 'GoogleSignInPage.dart';
+import 'UniversalSignInPage.dart';
 
 class SignInCheck extends StatefulWidget {
   const SignInCheck({Key? key}) : super(key: key);

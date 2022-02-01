@@ -5,7 +5,11 @@ final emailController = TextEditingController();
 final passwordController = TextEditingController();
 
 Future EmailSignIn() async {
-  await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text.trim(),
-      password: passwordController.text.trim());
+  try {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim());
+  } on FirebaseAuthException catch (error) {
+    print(error);
+  }
 }
