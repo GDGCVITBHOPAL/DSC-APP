@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dsc_client/authentication/AccountPage.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/screens/MediumPage/ArticlesPage.dart';
 import 'package:dsc_client/screens/dscScreen/aboutDSC.dart';
@@ -17,8 +19,10 @@ class navigate extends StatefulWidget {
 class _navigateState extends State<navigate> {
   int current_index = 0;
   final screens = [Home(), ArticlesPage(), RequestEventForm()];
-  //Google User data
+  //Firebase User data
   final user = FirebaseAuth.instance.currentUser!;
+  bool _loaded = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +55,13 @@ class _navigateState extends State<navigate> {
                     context, MaterialPageRoute(builder: (context) => Team()));
               },
             ),
+            ListTile(
+              title: const Text('Your Account'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AccountPage()));
+              },
+            ),
           ],
         ),
       ),
@@ -65,12 +76,17 @@ class _navigateState extends State<navigate> {
         actions: [
           GestureDetector(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(user.photoURL!),
-              ),
-            ),
-            onTap: () {},
+                padding: const EdgeInsets.all(8.0),
+                child: CircleAvatar(
+
+                    // backgroundImage:                         //disabled temporarily to avoid null error on homepage
+                    //   NetworkImage(user.photoURL!)
+
+                    )),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AccountPage()));
+            },
           )
         ],
       ),
