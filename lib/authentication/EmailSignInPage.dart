@@ -1,6 +1,7 @@
 import 'package:dsc_client/widgets/navigation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'EmailSignIn.dart';
 
 class SignInWithEmail extends StatefulWidget {
@@ -13,17 +14,32 @@ class SignInWithEmail extends StatefulWidget {
 class _SignInWithEmailState extends State<SignInWithEmail> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
-      children: [
-        TextField(),
-        TextField(),
-        ElevatedButton(
-            onPressed: () {
-              EmailSignIn();
-            },
-            child: Text('Sign In'))
-      ],
-    ));
+    return StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return navigate();
+          } else {
+            return Scaffold(
+                body: Column(
+              children: [
+                TextField(
+                  controller: emailController,
+                  textInputAction: TextInputAction.next,
+                ),
+                TextField(
+                  controller: passwordController,
+                  textInputAction: TextInputAction.done,
+                  obscureText: true,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      EmailSignIn();
+                    },
+                    child: Text('Sign In'))
+              ],
+            ));
+          }
+        });
   }
 }
