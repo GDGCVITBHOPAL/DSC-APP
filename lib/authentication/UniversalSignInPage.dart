@@ -18,6 +18,12 @@ class GSignInPage extends StatefulWidget {
 class _GSignInPageState extends State<GSignInPage> {
   @override
   Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+    builder: (context, snapshot) {
+    if (snapshot.hasData) {
+    return navigate();
+    } else {
     return Scaffold(
               body: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -149,3 +155,5 @@ class _GSignInPageState extends State<GSignInPage> {
             );
           }
 }
+  );
+  }}

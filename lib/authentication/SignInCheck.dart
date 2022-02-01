@@ -13,22 +13,24 @@ class SignInCheck extends StatefulWidget {
 class _SignInCheckState extends State<SignInCheck> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: StreamBuilder(
           stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
+          builder: (context, snapshot){
+            if (snapshot.connectionState == ConnectionState.waiting){
               return Center(child: CircularProgressIndicator.adaptive());
-            } else if (snapshot.hasData) {
+            }
+            else if (snapshot.hasData) {
               return navigate();
-            } else if (snapshot.hasError) {
-              return Center(
-                child: Text('Something went wrong!'),
-              );
-            } else {
+            }
+            else if (snapshot.hasError){
+              return Center(child: Text('Something went wrong!'),);
+            }else {
               return GSignInPage();
             }
-          }),
+          }
+      ),
     );
   }
 }

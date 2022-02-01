@@ -4,10 +4,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '../authentication/SignInCheck.dart';
 import 'UniversalSignInPage.dart';
 
-class GoogleSignInProvider extends ChangeNotifier {
+class GoogleSignInProvider extends ChangeNotifier{
   final googleSignIn = GoogleSignIn();
   GoogleSignInAccount? _user;
-  GoogleSignInAccount get user => _user!;
+  GoogleSignInAccount get user => user!;
 
   Future googleLogin() async {
     try {
@@ -18,16 +18,18 @@ class GoogleSignInProvider extends ChangeNotifier {
       final googleAuth = await googleUser.authentication;
 
       final credential = GoogleAuthProvider.credential(
-          accessToken: googleAuth.accessToken, idToken: googleAuth.idToken);
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken
+      );
 
       await FirebaseAuth.instance.signInWithCredential(credential);
-    } catch (exception) {
+    }catch(exception){
       print(exception.toString());
     }
     notifyListeners();
   }
 
-  Future logout(context) async {
+  Future logout(context) async{
     await googleSignIn.disconnect();
     FirebaseAuth.instance.signOut();
     Navigator.of(context).pushReplacement(
