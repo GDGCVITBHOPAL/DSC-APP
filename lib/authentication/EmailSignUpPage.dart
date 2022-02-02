@@ -1,14 +1,10 @@
 import 'package:dsc_client/authentication/EmailSignIn.dart';
-import 'package:dsc_client/authentication/EmailSignInPage.dart';
 import 'package:dsc_client/authentication/UniversalSignInPage.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/widgets/navigation.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../authentication/GoogleSignIn.dart';
-import 'package:provider/provider.dart';
-import 'GoogleSignIn.dart';
 
 class ESignUpPage extends StatefulWidget {
   ESignUpPage({Key? key}) : super(key: key);

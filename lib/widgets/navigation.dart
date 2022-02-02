@@ -79,7 +79,7 @@ class _navigateState extends State<navigate> {
                 padding: const EdgeInsets.all(8.0),
                 child: CircleAvatar(
 
-                    // backgroundImage:                         //disabled temporarily to avoid null error on homepage
+                    // backgroundImage:                         //disabled temporarily to avoid null error on Email login
                     //   NetworkImage(user.photoURL!)
 
                     )),

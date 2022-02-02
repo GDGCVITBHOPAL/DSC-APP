@@ -4,7 +4,6 @@ import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({Key? key}) : super(key: key);

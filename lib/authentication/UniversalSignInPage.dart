@@ -19,6 +19,10 @@ class _GSignInPageState extends State<GSignInPage> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
+
+        /*Listens to changes is login state for Email based accounts and redirects
+        to homepage on valid request*/
+
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {

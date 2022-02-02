@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dsc_client/configs/assets.dart';
 import 'package:flutter/material.dart';
 
 class RequestEventForm extends StatefulWidget {
@@ -50,10 +49,9 @@ class _RequestEventFormState extends State<RequestEventForm> {
                       ),
                       TextField(
                         controller: nameEditingController,
-                        decoration:
-                            InputDecoration(
-                                border: OutlineInputBorder(),
-                                hintText: "Enter your Name"),
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: "Enter your Name"),
                         maxLines: 1,
                       ),
                       SizedBox(
@@ -91,19 +89,15 @@ class _RequestEventFormState extends State<RequestEventForm> {
                       ),
                       TextButton(
                         style: ButtonStyle(
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                      side: BorderSide(color: Colors.red)
-                                  )
-                              )
-                          ),
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.red)))),
                         child: Text("submit"),
                         onPressed: () {
                           addToFirestore();
                         },
-
-
                       ),
                     ],
                   ),
