@@ -1,5 +1,6 @@
 import 'package:dsc_client/authentication/GoogleSignIn.dart';
 import 'package:dsc_client/authentication/SignInCheck.dart';
+import 'package:dsc_client/authentication/Utils.dart';
 import 'package:dsc_client/utils/sharedPreferences.dart';
 import 'package:provider/provider.dart';
 import '../widgets/navigation.dart';
@@ -10,6 +11,7 @@ import 'screens/eventDetails/eventDetails.dart';
 import 'constants.dart';
 import 'screens/homeScreen/home.dart';
 import 'screens/onBoardScreen/onBoardingPage.dart';
+import '../authentication/Utils.dart';
 
 bool isHomeScreen = true;
 
@@ -27,6 +29,7 @@ class DSC extends StatelessWidget {
   Widget build(BuildContext context) => ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
       child: MaterialApp(
+        scaffoldMessengerKey: Utils.messengerKey,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             brightness: Brightness

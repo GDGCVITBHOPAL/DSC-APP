@@ -1,5 +1,5 @@
 import 'package:dsc_client/authentication/EmailSignIn.dart';
-import 'package:dsc_client/authentication/EmailSignInPage.dart';
+import 'package:dsc_client/authentication/EmailSignUpPage.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/widgets/navigation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,11 +20,11 @@ class _GSignInPageState extends State<GSignInPage> {
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
-    builder: (context, snapshot) {
-    if (snapshot.hasData) {
-    return navigate();
-    } else {
-    return Scaffold(
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return navigate();
+          } else {
+            return Scaffold(
               body: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
@@ -142,7 +142,13 @@ class _GSignInPageState extends State<GSignInPage> {
                               children: [
                                 Text("Don't have an account?"),
                                 TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ESignUpPage()));
+                                    },
                                     child: Text(
                                       'Create an account',
                                       style: TextStyle(color: Colors.green),
@@ -154,6 +160,6 @@ class _GSignInPageState extends State<GSignInPage> {
                       ])),
             );
           }
+        });
+  }
 }
-  );
-  }}
