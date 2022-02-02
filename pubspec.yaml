@@ -37,6 +37,7 @@ dependencies:
   google_sign_in: ^5.2.3
   provider: any
   cached_network_image: any
+  email_validator: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
