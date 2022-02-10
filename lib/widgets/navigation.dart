@@ -3,6 +3,7 @@ import 'package:dsc_client/authentication/AccountPage.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/screens/MediumPage/ArticlesPage.dart';
 import 'package:dsc_client/screens/dscScreen/aboutDSC.dart';
+import 'package:dsc_client/screens/eventsScreen/EventsPage.dart';
 import 'package:dsc_client/screens/homeScreen/home.dart';
 import 'package:dsc_client/screens/requestEvents/requestEvent.dart';
 import 'package:dsc_client/screens/team/team.dart';
@@ -18,7 +19,7 @@ class navigate extends StatefulWidget {
 
 class _navigateState extends State<navigate> {
   int current_index = 0;
-  final screens = [Home(), ArticlesPage(), RequestEventForm()];
+  final screens = [EventsPage(), ArticlesPage(), RequestEventForm()];
   //Firebase User data
   final user = FirebaseAuth.instance.currentUser!;
   bool _loaded = false;
@@ -73,22 +74,6 @@ class _navigateState extends State<navigate> {
           child: Image.asset(Assets.vitb_dsc_logo),
         ),
         centerTitle: true,
-        actions: [
-          GestureDetector(
-            child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CircleAvatar(
-
-                    // backgroundImage:                         //disabled temporarily to avoid null error on Email login
-                    //   NetworkImage(user.photoURL!)
-
-                    )),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AccountPage()));
-            },
-          )
-        ],
       ),
       body: IndexedStack(
         children: screens,
@@ -97,7 +82,6 @@ class _navigateState extends State<navigate> {
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
           indicatorColor: Colors.blue.shade200,
-          // iconTheme: MaterialStateProperty(),
           height: 60,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         ),
