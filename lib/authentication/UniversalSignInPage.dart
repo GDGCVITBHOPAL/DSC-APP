@@ -34,50 +34,47 @@ class _GSignInPageState extends State<GSignInPage> {
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SingleChildScrollView(
-                          child: Column(children: [
-                            Container(
-                                height: 130,
-                                width: 200,
-                                child: Image.asset(Assets.vitb_dsc_logo)),
-                            SizedBox(
-                              height: 70,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Hi there,\nWelcome Back!',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 40),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 50,
-                            ),
-                            TextField(
-                              controller: emailController,
-                              textInputAction: TextInputAction.next,
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  hintText: "Email"),
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            TextField(
-                              controller: passwordController,
-                              textInputAction: TextInputAction.done,
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  hintText: "Password"),
-                            ),
-                          ]),
-                        ),
+                        Column(children: [
+                          Container(
+                              height: 130,
+                              width: 200,
+                              child: Image.asset(Assets.vitb_dsc_logo)),
+                          SizedBox(
+                            height: 70,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Hi there,\nWelcome Back!',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w800, fontSize: 40),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 50,
+                          ),
+                          TextField(
+                            controller: emailController,
+                            textInputAction: TextInputAction.next,
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: "Email"),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          TextField(
+                            controller: passwordController,
+                            textInputAction: TextInputAction.done,
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: "Password"),
+                          ),
+                        ]),
                         SingleChildScrollView(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

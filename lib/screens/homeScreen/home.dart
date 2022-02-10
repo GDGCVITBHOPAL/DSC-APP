@@ -1,3 +1,5 @@
+//This is a backup file and not used  in the project.
+
 import 'package:dsc_client/screens/eventsScreen/PastEventsPage.dart';
 import 'package:dsc_client/screens/eventsScreen/UpcomingEventsPage.dart';
 import 'package:dsc_client/configs/assets.dart';

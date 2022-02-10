@@ -34,8 +34,9 @@ class DSC extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.light,
           scaffoldBackgroundColor: Colors.white,
-          primaryColor: Colors.blue.shade200,
+          primaryColor: Colors.blue.shade300,
           appBarTheme: AppBarTheme(
+            iconTheme: IconThemeData(color: Colors.black),
             color: Colors.white,
           ),
         ),
