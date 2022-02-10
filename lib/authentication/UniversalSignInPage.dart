@@ -8,16 +8,12 @@ import '../authentication/GoogleSignIn.dart';
 import 'package:provider/provider.dart';
 import 'GoogleSignIn.dart';
 
-class GSignInPage extends StatefulWidget {
+class GSignInPage extends StatelessWidget {
   const GSignInPage({Key? key}) : super(key: key);
 
   @override
-  _GSignInPageState createState() => _GSignInPageState();
-}
-
-class _GSignInPageState extends State<GSignInPage> {
-  @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<GoogleSignInProvider>(context, listen: true);
     return StreamBuilder<User?>(
 
         /*Listens to changes is login state for Email based accounts and redirects
@@ -29,56 +25,57 @@ class _GSignInPageState extends State<GSignInPage> {
             return navigate();
           } else {
             return Scaffold(
-              body: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(children: [
-                          Container(
-                              height: 130,
-                              width: 200,
-                              child: Image.asset(Assets.vitb_dsc_logo)),
-                          SizedBox(
-                            height: 70,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                body: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: SingleChildScrollView(
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                'Hi there,\nWelcome Back!',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800, fontSize: 40),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 50,
-                          ),
-                          TextField(
-                            controller: emailController,
-                            textInputAction: TextInputAction.next,
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                hintText: "Email"),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          TextField(
-                            controller: passwordController,
-                            textInputAction: TextInputAction.done,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                hintText: "Password"),
-                          ),
-                        ]),
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          Column(
                             children: [
+                              Container(
+                                  height: 130,
+                                  width: 200,
+                                  child: Image.asset(Assets.vitb_dsc_logo)),
+                              SizedBox(
+                                height: 70,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Hi there,\nWelcome Back!',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w800,
+                                        fontSize: 40),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 50,
+                              ),
+                              TextField(
+                                controller: emailController,
+                                textInputAction: TextInputAction.next,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    hintText: "Email"),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              TextField(
+                                controller: passwordController,
+                                textInputAction: TextInputAction.done,
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    hintText: "Password"),
+                              ),
+                              SizedBox(
+                                height: 70,
+                              ),
                               TextButton(
                                 onPressed: () {
                                   EmailSignIn();
@@ -111,9 +108,6 @@ class _GSignInPageState extends State<GSignInPage> {
                               ),
                               TextButton(
                                 onPressed: () {
-                                  final provider =
-                                      Provider.of<GoogleSignInProvider>(context,
-                                          listen: false);
                                   provider.googleLogin();
                                 },
                                 child: Container(
@@ -143,28 +137,25 @@ class _GSignInPageState extends State<GSignInPage> {
                                 height: 20,
                               ),
                               Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text("Don't have an account?"),
-                                  TextButton(
-                                      onPressed: () {
-                                        Navigator.pushReplacement(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ESignUpPage()));
-                                      },
-                                      child: Text(
-                                        'Create an account',
-                                        style: TextStyle(color: Colors.green),
-                                      ))
-                                ],
-                              ),
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("Don't have an account?"),
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ESignUpPage()));
+                                        },
+                                        child: Text(
+                                          'Create an account',
+                                          style: TextStyle(color: Colors.green),
+                                        ))
+                                  ]),
                             ],
                           ),
-                        ),
-                      ])),
-            );
+                        ]))));
           }
         });
   }

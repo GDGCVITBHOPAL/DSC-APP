@@ -4,19 +4,15 @@ import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class AccountPage extends StatefulWidget {
-  const AccountPage({Key? key}) : super(key: key);
+class AccountPage extends StatelessWidget {
+  AccountPage({Key? key}) : super(key: key);
+  final user = FirebaseAuth.instance.currentUser!;
 
-  @override
-  _AccountPageState createState() => _AccountPageState();
-}
-
-final user = FirebaseAuth.instance.currentUser!;
-
-class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<GoogleSignInProvider>(context, listen: true);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -44,14 +40,11 @@ class _AccountPageState extends State<AccountPage> {
             padding: const EdgeInsets.all(8.0),
             child: TextButton(
               onPressed: () {
-                // if (GoogleAuthProvider.PROVIDER_ID ==
-                //     GoogleAuthProvider.GOOGLE_SIGN_IN_METHOD) {
-                //   final provider =
-                //       Provider.of<GoogleSignInProvider>(context, listen: false);
-                //   provider.logout(context);
-                // } else {
                 FirebaseAuth.instance.signOut();
-                // }
+                // Navigator.pushReplacement(context,
+                //     MaterialPageRoute(builder: (context) => GSignInPage()));
+
+                provider.logout(context);
               },
               child: Container(
                 alignment: Alignment.center,
