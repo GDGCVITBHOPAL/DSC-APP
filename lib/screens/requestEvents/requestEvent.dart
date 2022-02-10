@@ -88,16 +88,29 @@ class _RequestEventFormState extends State<RequestEventForm> {
                         height: 30,
                       ),
                       TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18.0),
-                                    side: BorderSide(color: Colors.red)))),
-                        child: Text("submit"),
                         onPressed: () {
                           addToFirestore();
                         },
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 36,
+                          // Constructor Call #2
+                          child: Text(
+                            'Submit',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                            splashFactory: NoSplash.splashFactory,
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.amber),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ))),
                       ),
                     ],
                   ),
