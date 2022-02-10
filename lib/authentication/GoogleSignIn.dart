@@ -1,3 +1,4 @@
+import 'package:dsc_client/authentication/UniversalSignInPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -30,6 +31,6 @@ class GoogleSignInProvider extends ChangeNotifier {
     await googleSignIn.disconnect();
     FirebaseAuth.instance.signOut();
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => SignInCheck()));
+        MaterialPageRoute(builder: (context) => GSignInPage()));
   }
 }
