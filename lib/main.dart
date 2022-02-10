@@ -30,10 +30,11 @@ class DSC extends StatelessWidget {
       child: MaterialApp(
         scaffoldMessengerKey: Utils.messengerKey,
         debugShowCheckedModeBanner: false,
+        //App Theming
         theme: ThemeData(
           brightness: Brightness.light,
           scaffoldBackgroundColor: Colors.white,
-          primaryColor: Color(0xff4285F4),
+          primaryColor: Colors.blue.shade200,
           appBarTheme: AppBarTheme(
             color: Colors.white,
           ),
@@ -41,13 +42,14 @@ class DSC extends StatelessWidget {
         darkTheme: ThemeData(
           brightness: Brightness.dark,
           scaffoldBackgroundColor: Color(0xff111111),
-          primaryColor: Color(0xff4075E0),
-          cardColor: Color(0xff1A1A1A),
+          primaryColor: Colors.blue.shade200,
+          cardColor: Colors.grey.shade800,
           appBarTheme: AppBarTheme(
             color: Color(0xff111111),
           ),
         ),
         themeMode: ThemeMode.system,
+
         initialRoute: isHomeScreen ? '/' : '/home',
         onGenerateRoute: (RouteSettings settings) {
           switch (settings.name) {
