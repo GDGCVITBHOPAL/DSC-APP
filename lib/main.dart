@@ -3,12 +3,9 @@ import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/authentication/Utils.dart';
 import 'package:dsc_client/utils/sharedPreferences.dart';
 import 'package:provider/provider.dart';
-import '../widgets/navigation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'screens/eventDetails/eventDetails.dart';
-import 'constants.dart';
-import 'screens/homeScreen/home.dart';
 import 'screens/onBoardScreen/onBoardingPage.dart';
 import '../authentication/Utils.dart';
 
@@ -42,11 +39,12 @@ class DSC extends StatelessWidget {
         ),
         darkTheme: ThemeData(
           brightness: Brightness.dark,
-          scaffoldBackgroundColor: Color(0xff111111),
+          drawerTheme: DrawerThemeData(backgroundColor: Colors.grey.shade800),
+          scaffoldBackgroundColor: Colors.black,
           primaryColor: Colors.blue.shade200,
           cardColor: Colors.grey.shade800,
           appBarTheme: AppBarTheme(
-            color: Color(0xff111111),
+            color: Colors.black,
           ),
         ),
         themeMode: ThemeMode.system,
