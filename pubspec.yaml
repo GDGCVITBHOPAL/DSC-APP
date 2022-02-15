@@ -39,6 +39,19 @@ dependencies:
   cached_network_image: any
   email_validator: any
   after_layout: ^1.1.0
+  flutter_svg: ^1.0.3
+  flutter_screenutil: ^5.2.0
+  page_transition: ^2.0.5
+  unicons: ^2.0.2
+  animate_do: ^2.1.0
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+  image: assets\images\main_logo.png
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
