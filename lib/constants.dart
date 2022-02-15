@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const List<Color> googleLogoColorsList = [
-    Colors.blue,
-    Colors.red,
-    Colors.yellow,
-    Colors.blue,
-    Colors.green,
-    Colors.red
+  static List<Color> googleLogoColorsList = [
+    Colors.blue.shade500,
+    Colors.blue.shade300,
+    Colors.blue.shade100,
   ];
   static const String title = "DSC";
 }
