@@ -1,3 +1,4 @@
+import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/screens/team/TeamTab.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +18,12 @@ class _TeamState extends State<Team> {
       length: 9,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Team Members'),
+          toolbarHeight: 80,
+          elevation: 0,
+          title: Container(
+            height: 80,
+            child: Image.asset(Assets.vitb_dsc_logo),
+          ),
           centerTitle: true,
           actions: [
             DropdownButtonHideUnderline(
@@ -46,6 +52,7 @@ class _TeamState extends State<Team> {
               Tab(child: Text('WTM')),
             ],
             isScrollable: true,
+            indicatorColor: Colors.blue.shade200,
             labelColor: Theme.of(context).primaryColor,
             unselectedLabelColor: Colors.grey,
             labelStyle: GoogleFonts.rubik(

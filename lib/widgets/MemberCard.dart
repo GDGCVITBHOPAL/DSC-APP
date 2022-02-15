@@ -19,24 +19,13 @@ class MemberCard extends StatelessWidget {
           fontWeight: FontWeight.w400,
         ),
       ),
-      leading: Image.network(
-        member.profile!,
-        fit: BoxFit.cover,
-        height: 60,
-        width: 60,
-        errorBuilder: (context, error, stackTrace) {
-          return Image.asset(
-            'assets/images/main_logo.png',
-            fit: BoxFit.fitWidth,
-            height: 60,
-            width: 60,
-          );
-        },
+      leading: CircleAvatar(
+        backgroundImage: NetworkImage(member.profile!),
       ),
       subtitle: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             if (social.github != null && social.github!.isNotEmpty)
               ElevatedButton(
@@ -48,8 +37,18 @@ class MemberCard extends StatelessWidget {
                     throw 'Could not launch $link';
                   }
                 },
-                child: Text('G'),
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    //color: Colors.black,
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/github_logo.png'),
+                        fit: BoxFit.contain),
+                  ),
+                ),
                 style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
                   shape: CircleBorder(),
                 ),
               ),
@@ -63,7 +62,17 @@ class MemberCard extends StatelessWidget {
                     throw 'Could not launch $link';
                   }
                 },
-                child: Text('M'),
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    //color: Colors.black,
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/medium_logo.jpeg'),
+                        fit: BoxFit.cover),
+                  ),
+                ),
                 style: ElevatedButton.styleFrom(
                   shape: CircleBorder(),
                 ),
@@ -78,7 +87,17 @@ class MemberCard extends StatelessWidget {
                     throw 'Could not launch $link';
                   }
                 },
-                child: Text('L'),
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    //color: Colors.black,
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/linkedin_logo.png'),
+                        fit: BoxFit.cover),
+                  ),
+                ),
                 style: ElevatedButton.styleFrom(
                   shape: CircleBorder(),
                 ),
@@ -93,7 +112,17 @@ class MemberCard extends StatelessWidget {
                     throw 'Could not launch $link';
                   }
                 },
-                child: Text('T'),
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    //color: Colors.black,
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/twitter_logo.png'),
+                        fit: BoxFit.cover),
+                  ),
+                ),
                 style: ElevatedButton.styleFrom(
                   shape: CircleBorder(),
                 ),
