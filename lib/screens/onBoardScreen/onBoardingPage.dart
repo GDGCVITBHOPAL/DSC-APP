@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/data/models/onBoardingModel.dart';
-import 'package:dsc_client/screens/homeScreen/home.dart';
 import 'package:dsc_client/utils/sharedPreferences.dart';
 import 'package:dsc_client/widgets/pageIndicator.dart';
 import 'package:flutter/material.dart';
@@ -29,16 +29,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: new BoxDecoration(
-            gradient: new LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.white,
-                MyColors.primaryColor,
-              ],
-            ),
-          ),
+          // decoration: new BoxDecoration(
+          //   gradient: new LinearGradient(
+          //     begin: Alignment.topCenter,
+          //     end: Alignment.bottomCenter,
+          //     colors: [
+          //       Colors.white,
+          //       MyColors.primaryColor,
+          //     ],
+          //   ),
+          // ),
           child: Column(
             children: [
               Row(
@@ -53,7 +53,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               curve: Curves.linear);
                         },
                         child: Text(
-                          "skip >",
+                          "Skip",
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -100,26 +100,60 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushNamedAndRemoveUntil(context, Home.route,
-                            (Route<dynamic> route) => false);
-                      },
-                      child: slideIndex == 2
-                          ? Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 20),
-                              child: Text(
-                                "< Get Started />",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black),
-                              ),
-                            )
-                          : Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 30),
-                            ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignInCheck()));
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 36,
+                          // Constructor Call #2
+                          child: Text(
+                            'Get Started',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                            splashFactory: NoSplash.splashFactory,
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.green),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ))),
+                      ),
                     ),
+                    // InkWell(
+                    //   onTap: () {
+                    //     Navigator.pushReplacementNamed(
+                    //       context,
+                    //       Home.route,
+                    //     );
+                    //   },
+                    //   child: slideIndex == 2
+                    //       ? Padding(
+                    //           padding: const EdgeInsets.symmetric(vertical: 20),
+                    //           child: Text(
+                    //             "< Get Started ",
+                    //             style: TextStyle(
+                    //                 fontSize: 16,
+                    //                 fontWeight: FontWeight.w500,
+                    //                 color: Colors.black),
+                    //           ),
+                    //         )
+                    //       : Padding(
+                    //           padding: const EdgeInsets.symmetric(vertical: 30),
+                    //         ),
+                    // ),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -177,20 +211,21 @@ class SlideTile extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 8,
+            height: 50,
           ),
           AutoSizeText(
             title!,
             minFontSize: 15,
-            maxLines: 1,
+            // maxLines: 1,
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w500,
-              color: Colors.grey,
+              //color: Colors.grey,
             ),
           ),
           Text(
             desc!,
+            textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 12, fontWeight: FontWeight.w400, color: Colors.white),
           ),
