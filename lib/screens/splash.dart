@@ -15,8 +15,8 @@ class _splashState extends State<splash> with AfterLayoutMixin<splash> {
     bool _seen = (prefs.getBool('seen') ?? false);
 
     if (_seen) {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => OnBoardingScreen())); //SignInCheck()
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => SignInCheck()));
     } else {
       await prefs.setBool('seen', true);
       Navigator.of(context).pushReplacement(
@@ -28,8 +28,8 @@ class _splashState extends State<splash> with AfterLayoutMixin<splash> {
   void afterFirstLayout(BuildContext context) => checkFirstSeen();
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(),
+    return Scaffold(
+      body: Center(child: Image.asset('assets/images/main_logo.png')),
     );
   }
 }
