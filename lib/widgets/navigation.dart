@@ -6,7 +6,7 @@ import 'package:dsc_client/screens/dscScreen/aboutDSC.dart';
 import 'package:dsc_client/screens/eventsScreen/EventsPage.dart';
 import 'package:dsc_client/screens/homeScreen/home.dart';
 import 'package:dsc_client/screens/requestEvents/requestEvent.dart';
-import 'package:dsc_client/screens/team/team.dart';
+import 'package:dsc_client/screens/team/TeamPage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
