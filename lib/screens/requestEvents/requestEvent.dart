@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dsc_client/configs/assets.dart';
 import 'package:flutter/material.dart';
 
 class RequestEventForm extends StatefulWidget {
@@ -39,53 +38,79 @@ class _RequestEventFormState extends State<RequestEventForm> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              flex: 1,
-              child: Container(
-                child: Center(child: Image.asset(Assets.vitb_dsc_logo)),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Expanded(
               flex: 6,
               child: SingleChildScrollView(
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
+                      SizedBox(
+                        height: 30,
+                      ),
                       TextField(
                         controller: nameEditingController,
-                        decoration:
-                            InputDecoration(hintText: "Enter your Name"),
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: "Enter your Name"),
                         maxLines: 1,
+                      ),
+                      SizedBox(
+                        height: 30,
                       ),
                       TextField(
                         controller: eventEditingController,
                         decoration: InputDecoration(
+                            border: OutlineInputBorder(),
                             hintText: "On What Topic do you need an event??"),
                         maxLines: 2,
+                      ),
+                      SizedBox(
+                        height: 30,
                       ),
                       TextField(
                         controller: guestnameEditingController,
                         decoration: InputDecoration(
+                            border: OutlineInputBorder(),
                             hintText: "Any particular guest you want to call?"),
                         maxLines: 1,
+                      ),
+                      SizedBox(
+                        height: 30,
                       ),
                       TextField(
                         controller: guestLinkEditingController,
                         decoration: InputDecoration(
+                            border: OutlineInputBorder(),
                             hintText: "Enter url to guest's public profile"),
                         maxLines: 2,
                       ),
                       SizedBox(
                         height: 30,
                       ),
-                      ElevatedButton(
+                      TextButton(
                         onPressed: () {
                           addToFirestore();
                         },
-                        child: Text("submit"),
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 36,
+                          // Constructor Call #2
+                          child: Text(
+                            'Submit',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                            splashFactory: NoSplash.splashFactory,
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.amber),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ))),
                       ),
                     ],
                   ),
