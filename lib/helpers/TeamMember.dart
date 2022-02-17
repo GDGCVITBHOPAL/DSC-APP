@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dsc_client/helpers/Social.dart';
 
 class TeamMember {

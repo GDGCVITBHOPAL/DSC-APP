@@ -60,10 +60,7 @@ class DSC extends StatelessWidget {
               return PageRouteBuilder(
                   pageBuilder: (_, a1, a2) => SignInCheck(),
                   settings: settings);
-            case '/eventDetails':
-              return PageRouteBuilder(
-                  pageBuilder: (_, a1, a2) => EventDetails(),
-                  settings: settings);
+
             default:
               return PageRouteBuilder(
                 pageBuilder: (_, a1, a2) => SignInCheck(),
