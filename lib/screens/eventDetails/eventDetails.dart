@@ -20,6 +20,7 @@ class EventDetails extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
                 image: DecorationImage(
                   image: NetworkImage(this.eventDetails.eventImageUrl!),
                   fit: BoxFit.fill,

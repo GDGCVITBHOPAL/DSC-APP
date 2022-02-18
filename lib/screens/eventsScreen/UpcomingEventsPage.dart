@@ -28,7 +28,7 @@ class _UpcomingEventsPageState extends State<UpcomingEventsPage> {
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Center(
-            child: Text('OOPS! Something went wrong'),
+            child: Text('Oops! Something went wrong'),
           );
         }
 

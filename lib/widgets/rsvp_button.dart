@@ -56,38 +56,56 @@ class _RSVPButtonState extends State<RSVPButton> {
     return isAttending
         ? Padding(
             padding: const EdgeInsets.all(10.0),
-            child: OutlinedButton(
-              onPressed: rsvpNo,
-              child: Text(
-                'No, I won\'t attend',
-                style: GoogleFonts.openSans(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w600,
+            child: TextButton(
+              onPressed: () {
+                rsvpNo();
+              },
+              child: Container(
+                alignment: Alignment.center,
+                height: 36,
+                // Constructor Call #2
+                child: Text(
+                  'No, can\'t attend',
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700),
                 ),
               ),
-              style: OutlinedButton.styleFrom(
-                side: BorderSide(
-                  color: Theme.of(context).primaryColor,
-                ),
-              ),
+              style: ButtonStyle(
+                  splashFactory: NoSplash.splashFactory,
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.red.shade400),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ))),
             ),
           )
         : Padding(
             padding: const EdgeInsets.all(10.0),
-            child: OutlinedButton(
-              onPressed: rsvpYes,
-              child: Text(
-                'Yes, I will attend',
-                style: GoogleFonts.openSans(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w600,
+            child: TextButton(
+              onPressed: () {
+                rsvpYes();
+              },
+              child: Container(
+                alignment: Alignment.center,
+                height: 36,
+                // Constructor Call #2
+                child: Text(
+                  'Yes, I\'m attending',
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700),
                 ),
               ),
-              style: OutlinedButton.styleFrom(
-                side: BorderSide(
-                  color: Theme.of(context).primaryColor,
-                ),
-              ),
+              style: ButtonStyle(
+                  splashFactory: NoSplash.splashFactory,
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.green.shade400),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ))),
             ),
           );
   }
