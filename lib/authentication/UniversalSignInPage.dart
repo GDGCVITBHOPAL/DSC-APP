@@ -4,6 +4,8 @@ import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/widgets/navigation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../authentication/GoogleSignIn.dart';
 import 'package:provider/provider.dart';
 import 'GoogleSignIn.dart';
@@ -43,9 +45,10 @@ class GSignInPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Hi there,\nWelcome Back!',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800, fontSize: 40),
+                                'Hey 👋\nWelcome Back!',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 40.sp),
                               )
                             ],
                           ),

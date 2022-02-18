@@ -4,6 +4,7 @@ import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class AccountPage extends StatelessWidget {
@@ -19,7 +20,11 @@ class AccountPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Currently Logged in as:"),
+          Text(
+            "Currently Logged in as:",
+            style:
+                GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600),
+          ),
           SizedBox(
             height: 20,
           ),

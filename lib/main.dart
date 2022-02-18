@@ -3,6 +3,7 @@ import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/authentication/Utils.dart';
 import 'package:dsc_client/screens/splash.dart';
 import 'package:dsc_client/utils/sharedPreferences.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -24,34 +25,36 @@ Future<void> main() async {
 class DSC extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
-        create: (context) => GoogleSignInProvider(),
-        child: MaterialApp(
-            scaffoldMessengerKey: Utils.messengerKey,
-            debugShowCheckedModeBanner: false,
-            //App Theming
-            theme: ThemeData(
-              brightness: Brightness.light,
-              scaffoldBackgroundColor: Colors.white,
-              primaryColor: Colors.blue.shade300,
-              appBarTheme: AppBarTheme(
-                iconTheme: IconThemeData(color: Colors.black),
-                color: Colors.white,
-              ),
-            ),
-            darkTheme: ThemeData(
-              brightness: Brightness.dark,
-              drawerTheme:
-                  DrawerThemeData(backgroundColor: Colors.grey.shade900),
-              scaffoldBackgroundColor: Colors.black,
-              primaryColor: Colors.blue.shade200,
-              cardColor: Colors.grey.shade800,
-              appBarTheme: AppBarTheme(
-                color: Colors.black,
-              ),
-            ),
-            themeMode: ThemeMode.system,
-            title: 'DSC VITB',
-            //Redirect to splash for first-time check
-            home: splash()),
-      );
+      create: (context) => GoogleSignInProvider(),
+      child: MaterialApp(
+        scaffoldMessengerKey: Utils.messengerKey,
+        debugShowCheckedModeBanner: false,
+        //App Theming
+        theme: ThemeData(
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: Colors.white,
+          primaryColor: Colors.blue.shade300,
+          appBarTheme: AppBarTheme(
+            iconTheme: IconThemeData(color: Colors.black),
+            color: Colors.white,
+          ),
+        ),
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          drawerTheme: DrawerThemeData(backgroundColor: Colors.grey.shade900),
+          scaffoldBackgroundColor: Colors.black,
+          primaryColor: Colors.blue.shade200,
+          cardColor: Colors.grey.shade800,
+          appBarTheme: AppBarTheme(
+            color: Colors.black,
+          ),
+        ),
+        themeMode: ThemeMode.system,
+        title: 'DSC VITB',
+        //Redirect to splash for first-time check
+        home: ScreenUtilInit(
+          designSize: const Size(414, 896),
+          builder: () => splash(),
+        ),
+      ));
 }

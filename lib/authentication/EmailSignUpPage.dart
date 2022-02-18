@@ -5,6 +5,8 @@ import 'package:dsc_client/widgets/navigation.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ESignUpPage extends StatefulWidget {
   ESignUpPage({Key? key}) : super(key: key);
@@ -44,8 +46,9 @@ class _ESignUpPageState extends State<ESignUpPage> {
                             children: [
                               Text(
                                 'Hi there,\nLet\'s get started!',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800, fontSize: 40),
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 40.sp),
                               )
                             ],
                           ),
@@ -117,6 +120,9 @@ class _ESignUpPageState extends State<ESignUpPage> {
                           ),
                           Text("Already have an account?"),
                           TextButton(
+                              style: ButtonStyle(
+                                splashFactory: NoSplash.splashFactory,
+                              ),
                               onPressed: () {
                                 Navigator.pushReplacement(
                                     context,
