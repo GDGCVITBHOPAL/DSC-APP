@@ -1,7 +1,4 @@
 //This is a backup file and not used  in the project.
-
-import 'package:dsc_client/screens/eventsScreen/PastEventsPage.dart';
-import 'package:dsc_client/screens/eventsScreen/UpcomingEventsPage.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/screens/MediumPage/ArticlesPage.dart';
 import 'package:dsc_client/screens/dscScreen/aboutDSC.dart';
