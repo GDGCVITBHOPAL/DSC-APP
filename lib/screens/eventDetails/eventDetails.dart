@@ -28,7 +28,7 @@ class EventDetails extends StatelessWidget {
               ),
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                color: Color(0x3E3E3E).withOpacity(0.9),
+                color: Color(0x3E3E3E).withOpacity(0.5),
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -237,7 +237,7 @@ class EventDetails extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Text(
                 'About this event',
-                style: GoogleFonts.openSans(
+                style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600,
                   fontSize: 20.0,
                 ),
@@ -246,11 +246,11 @@ class EventDetails extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text(
+                child: AutoSizeText(
                   this.eventDetails.eventContent!,
-                  style: GoogleFonts.openSans(
-                    fontSize: 15.0,
-                  ),
+                  style: GoogleFonts.poppins(
+                      // fontSize: 15.0,
+                      ),
                 ),
               ),
             ),

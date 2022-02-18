@@ -38,7 +38,7 @@ class EventTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 2.0),
               child: Text(
                 DateFormat.yMMMd().format(this.event.eventDate!),
-                style: GoogleFonts.rubik(
+                style: GoogleFonts.poppins(
                   fontSize: 14.0,
                   color: Colors.grey[500],
                 ),
@@ -49,7 +49,7 @@ class EventTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 2.0),
               child: Text(
                 event.eventType!,
-                style: GoogleFonts.rubik(
+                style: GoogleFonts.poppins(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -60,7 +60,7 @@ class EventTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 2.0),
               child: Text(
                 event.eventTitle!,
-                style: GoogleFonts.rubik(
+                style: GoogleFonts.poppins(
                   fontSize: 14.0,
                   color: Colors.grey[500],
                 ),
