@@ -28,7 +28,7 @@ class ArticleTile extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     fit: BoxFit.cover,
                     //color: ColorFilter.mode(Colors.black54, BlendMode.darken),
-                    color: Color.fromRGBO(10, 10, 10, 0.8),
+                    color: Color.fromRGBO(10, 10, 10, 0.5),
                     colorBlendMode: BlendMode.darken),
                 Center(
                   child: Container(
