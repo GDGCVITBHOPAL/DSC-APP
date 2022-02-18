@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dsc_client/configs/assets.dart';
 import 'package:flutter/material.dart';
 
 class RequestEventForm extends StatefulWidget {
@@ -33,6 +34,15 @@ class _RequestEventFormState extends State<RequestEventForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 80,
+        elevation: 0,
+        title: Container(
+          height: 80,
+          child: Image.asset(Assets.vitb_dsc_logo),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

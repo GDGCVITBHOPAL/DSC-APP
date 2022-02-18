@@ -14,15 +14,6 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<GoogleSignInProvider>(context, listen: true);
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 80,
-        elevation: 0,
-        title: Container(
-          height: 80,
-          child: Image.asset(Assets.vitb_dsc_logo),
-        ),
-        centerTitle: true,
-      ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
