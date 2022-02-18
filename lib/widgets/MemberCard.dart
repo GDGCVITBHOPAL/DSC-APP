@@ -99,6 +99,7 @@ class MemberCard extends StatelessWidget {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
                   shape: CircleBorder(),
                 ),
               ),

@@ -61,7 +61,7 @@ class _RequestEventFormState extends State<RequestEventForm> {
                   ),
                   AutoSizeText('Have a topic in mind?',
                       style: GoogleFonts.poppins(
-                          fontSize: 25, fontWeight: FontWeight.w600)),
+                          fontSize: 23, fontWeight: FontWeight.w600)),
                   AutoSizeText('Suggest us a topic you\'re interested in',
                       style: GoogleFonts.poppins()),
                   SizedBox(

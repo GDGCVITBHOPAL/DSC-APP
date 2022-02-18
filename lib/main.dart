@@ -41,7 +41,7 @@ class DSC extends StatelessWidget {
             darkTheme: ThemeData(
               brightness: Brightness.dark,
               drawerTheme:
-                  DrawerThemeData(backgroundColor: Colors.grey.shade800),
+                  DrawerThemeData(backgroundColor: Colors.grey.shade900),
               scaffoldBackgroundColor: Colors.black,
               primaryColor: Colors.blue.shade200,
               cardColor: Colors.grey.shade800,
@@ -50,29 +50,6 @@ class DSC extends StatelessWidget {
               ),
             ),
             themeMode: ThemeMode.system,
-
-            // initialRoute: isHomeScreen ? '/' : '/home',
-            // onGenerateRoute: (RouteSettings settings) {
-            //   switch (settings.name) {
-            //     case '/':
-            //       return PageRouteBuilder(
-            //           pageBuilder: (_, a1, a2) => OnBoardingScreen(),
-            //           settings: settings);
-            //     case '/home':
-            //       return PageRouteBuilder(
-            //           pageBuilder: (_, a1, a2) => SignInCheck(),
-            //           settings: settings);
-            //     case '/eventDetails':
-            //       return PageRouteBuilder(
-            //           pageBuilder: (_, a1, a2) => EventDetails(),
-            //           settings: settings);
-            //     default:
-            //       return PageRouteBuilder(
-            //         pageBuilder: (_, a1, a2) => SignInCheck(),
-            //         settings: settings,
-            //       );
-            //   }
-            // },
             title: 'DSC VITB',
             //Redirect to splash for first-time check
             home: splash()),
