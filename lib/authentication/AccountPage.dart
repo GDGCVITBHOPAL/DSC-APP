@@ -4,6 +4,7 @@ import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/configs/assets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class AccountPage extends StatelessWidget {
@@ -14,21 +15,16 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<GoogleSignInProvider>(context, listen: true);
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 80,
-        elevation: 0,
-        title: Container(
-          height: 80,
-          child: Image.asset(Assets.vitb_dsc_logo),
-        ),
-        centerTitle: true,
-      ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Currently Logged in as:"),
+          Text(
+            "Currently Logged in as:",
+            style:
+                GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600),
+          ),
           SizedBox(
             height: 20,
           ),

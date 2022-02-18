@@ -19,7 +19,7 @@ class navigate extends StatefulWidget {
 
 class _navigateState extends State<navigate> {
   int current_index = 0;
-  final screens = [EventsPage(), ArticlesPage(), RequestEventForm()];
+  final screens = [EventsPage(), ArticlesPage(), AccountPage()];
   //Firebase User data
   final user = FirebaseAuth.instance.currentUser!;
   bool _loaded = false;
@@ -57,10 +57,12 @@ class _navigateState extends State<navigate> {
               },
             ),
             ListTile(
-              title: const Text('Your Account'),
+              title: const Text('Request an event'),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AccountPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RequestEventForm()));
               },
             ),
           ],
@@ -100,9 +102,9 @@ class _navigateState extends State<navigate> {
                 label: 'Articles',
                 selectedIcon: Icon(Icons.article)),
             NavigationDestination(
-              icon: Icon(Icons.contact_support_outlined),
-              label: 'Request',
-              selectedIcon: Icon(Icons.contact_support),
+              icon: Icon(Icons.account_circle_outlined),
+              label: 'Profile',
+              selectedIcon: Icon(Icons.account_circle),
             ),
           ],
         ),

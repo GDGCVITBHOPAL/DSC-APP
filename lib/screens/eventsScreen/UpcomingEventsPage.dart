@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dsc_client/data/models/eventsModel.dart';
-import 'package:dsc_client/widgets/EventCard.dart';
+import 'package:dsc_client/widgets/event_tile.dart';
 import 'package:flutter/material.dart';
 
 class UpcomingEventsPage extends StatefulWidget {
@@ -10,51 +10,48 @@ class UpcomingEventsPage extends StatefulWidget {
 
 class _UpcomingEventsPageState extends State<UpcomingEventsPage> {
   late FirebaseFirestore _firebaseFirestore;
+  final Stream<QuerySnapshot> _eventsStream = FirebaseFirestore.instance
+      .collection('events')
+      .where('date', isGreaterThanOrEqualTo: DateTime.now().toString())
+      .snapshots();
 
-  List<EventModel> _events = [];
   @override
   void initState() {
     _firebaseFirestore = FirebaseFirestore.instance;
-    getData();
     super.initState();
-  }
-
-  void getData() {
-    final qurey = _firebaseFirestore
-        .collection('upcoming events')
-        .orderBy('priority', descending: false);
-
-    qurey.snapshots().forEach((element) {
-      element.docs.forEach((event) {
-        EventModel events = EventModel();
-        events.eventDesc = event.data()!['description'];
-        events.eventName = event.data()!['title'];
-        events.eventDate = event.data()!['time'];
-        events.eventDay = event.data()!['eventDay'];
-        events.eventHashTag = event.data()!['eventHashtag'];
-        events.eventMoreInfoLink = event.data()!['urlToEvent'];
-        events.eventPoster = event.data()!['imageUrl'];
-        events.eventTime = event.data()!['time'];
-        events.eventTitle = event.data()!['title'];
-        events.eventURL = event.data()!['urlToEvent'];
-        setState(() {
-          _events.add(events);
-        });
-      });
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView.separated(
-          itemBuilder: (context, index) {
-            return EventCard(event: _events[index]);
-          },
-          separatorBuilder: (context, index) => SizedBox(
-                height: 2.0,
-              ),
-          itemCount: _events.length),
+    return StreamBuilder<QuerySnapshot>(
+      stream: _eventsStream,
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Center(
+            child: Text('Oops! Something went wrong'),
+          );
+        }
+
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(
+            child: CircularProgressIndicator(
+              color: Theme.of(context).primaryColor,
+            ),
+          );
+        }
+
+        return GridView(
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          children: snapshot.data!.docs.map((DocumentSnapshot document) {
+            Map<String, dynamic> json = document.data()!;
+            return EventTile(
+              docId: document.id,
+              event: EventModel.fromJson(json),
+            );
+          }).toList(),
+        );
+      },
     );
   }
 }

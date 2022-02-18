@@ -1,3 +1,4 @@
+import 'package:dsc_client/screens/onBoardScreen/NewOnBoarding.dart';
 import 'package:dsc_client/screens/onBoardScreen/onBoardingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:after_layout/after_layout.dart';
@@ -20,7 +21,7 @@ class _splashState extends State<splash> with AfterLayoutMixin<splash> {
     } else {
       await prefs.setBool('seen', true);
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => OnBoardingScreen()));
+          MaterialPageRoute(builder: (context) => CarouselPage()));
     }
   }
 
@@ -29,7 +30,7 @@ class _splashState extends State<splash> with AfterLayoutMixin<splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Image.asset('assets/images/main_logo.png')),
+      body: Center(),
     );
   }
 }

@@ -131,29 +131,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             ))),
                       ),
                     ),
-                    // InkWell(
-                    //   onTap: () {
-                    //     Navigator.pushReplacementNamed(
-                    //       context,
-                    //       Home.route,
-                    //     );
-                    //   },
-                    //   child: slideIndex == 2
-                    //       ? Padding(
-                    //           padding: const EdgeInsets.symmetric(vertical: 20),
-                    //           child: Text(
-                    //             "< Get Started ",
-                    //             style: TextStyle(
-                    //                 fontSize: 16,
-                    //                 fontWeight: FontWeight.w500,
-                    //                 color: Colors.black),
-                    //           ),
-                    //         )
-                    //       : Padding(
-                    //           padding: const EdgeInsets.symmetric(vertical: 30),
-                    //         ),
-                    // ),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

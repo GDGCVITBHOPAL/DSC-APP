@@ -12,7 +12,6 @@ class Articles {
     var response = await http.get(url);
 
     var jsonData = jsonDecode(response.body);
-    print(jsonData);
 
     if (jsonData['status'] == 'ok') {
       jsonData['items'].forEach((element) {
