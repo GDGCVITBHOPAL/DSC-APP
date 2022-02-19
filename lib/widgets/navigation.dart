@@ -4,7 +4,6 @@ import 'package:dsc_client/configs/assets.dart';
 import 'package:dsc_client/screens/MediumPage/ArticlesPage.dart';
 import 'package:dsc_client/screens/dscScreen/aboutDSC.dart';
 import 'package:dsc_client/screens/eventsScreen/EventsPage.dart';
-import 'package:dsc_client/screens/homeScreen/home.dart';
 import 'package:dsc_client/screens/requestEvents/requestEvent.dart';
 import 'package:dsc_client/screens/team/TeamPage.dart';
 import 'package:flutter/material.dart';
@@ -83,6 +82,9 @@ class _navigateState extends State<navigate> {
       ),
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
+          backgroundColor: Theme.of(context).brightness == Brightness.light
+              ? Colors.grey.shade100
+              : Colors.grey.shade900,
           indicatorColor: Colors.blue.shade200,
           height: 70,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,

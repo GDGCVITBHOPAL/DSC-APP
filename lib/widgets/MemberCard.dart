@@ -14,13 +14,25 @@ class MemberCard extends StatelessWidget {
     return ListTile(
       title: Text(
         member.name!,
-        style: GoogleFonts.rubik(
+        style: GoogleFonts.poppins(
           fontSize: 15.0,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w600,
         ),
       ),
-      leading: CircleAvatar(
-        backgroundImage: NetworkImage(member.profile!),
+      leading: FadeInImage.assetNetwork(
+        placeholder: 'assets/images/main_logo.png',
+        image: member.profile!,
+        fit: BoxFit.fitWidth,
+        width: 60.0,
+        height: 60.0,
+        imageErrorBuilder: (context, error, stackTrace) {
+          return Image.asset(
+            'assets/images/main_logo.png',
+            fit: BoxFit.fitWidth,
+            width: 60.0,
+            height: 60.0,
+          );
+        },
       ),
       subtitle: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),

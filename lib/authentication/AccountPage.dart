@@ -1,7 +1,4 @@
 import 'package:dsc_client/authentication/GoogleSignIn.dart';
-import 'package:dsc_client/authentication/UniversalSignInPage.dart';
-import 'package:dsc_client/authentication/SignInCheck.dart';
-import 'package:dsc_client/configs/assets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

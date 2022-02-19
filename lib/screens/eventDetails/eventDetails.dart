@@ -82,7 +82,7 @@ class EventDetails extends StatelessWidget {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(SnackBar(
                                     content: Text(
-                                      'Could not launch $url',
+                                      'Could not launch link',
                                       style: GoogleFonts.openSans(
                                         fontSize: 14.0,
                                       ),
@@ -121,7 +121,7 @@ class EventDetails extends StatelessWidget {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(SnackBar(
                                     content: Text(
-                                      'Could not launch $url',
+                                      'Could not launch link',
                                       style: GoogleFonts.openSans(
                                         fontSize: 14.0,
                                       ),
@@ -160,7 +160,7 @@ class EventDetails extends StatelessWidget {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(SnackBar(
                                     content: Text(
-                                      'Could not launch $url',
+                                      'Could not launch link',
                                       style: GoogleFonts.openSans(
                                         fontSize: 14.0,
                                       ),
@@ -198,7 +198,7 @@ class EventDetails extends StatelessWidget {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(SnackBar(
                                     content: Text(
-                                      'Could not launch $url',
+                                      'Could not launch link',
                                       style: GoogleFonts.openSans(
                                         fontSize: 14.0,
                                       ),

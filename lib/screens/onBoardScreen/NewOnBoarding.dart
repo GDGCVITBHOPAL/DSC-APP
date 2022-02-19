@@ -3,12 +3,6 @@ import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/widgets/skip_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
-import 'package:page_transition/page_transition.dart';
-// import 'package:sprout/model_data/colors.dart';
-// import 'package:sprout/pages/authenticationPage.dart';
-// import 'package:sprout/widgets/carousel_page/skip_button.dart';
-// import 'package:sprout/widgets/common/sbutton.dart';
 import 'package:unicons/unicons.dart';
 
 class CarouselPage extends StatefulWidget {

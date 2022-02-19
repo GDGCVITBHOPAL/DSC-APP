@@ -1,5 +1,4 @@
 import 'package:dsc_client/screens/onBoardScreen/NewOnBoarding.dart';
-import 'package:dsc_client/screens/onBoardScreen/onBoardingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:after_layout/after_layout.dart';
 import '../authentication/SignInCheck.dart';

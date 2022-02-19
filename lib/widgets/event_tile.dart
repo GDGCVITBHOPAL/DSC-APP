@@ -29,16 +29,23 @@ class EventTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              child: Image.network(
-                event.eventImageUrl.toString(),
-                fit: BoxFit.cover,
+              child: FadeInImage.assetNetwork(
+                placeholder: 'assets/images/logo.png',
+                image: event.eventImageUrl!,
+                fit: BoxFit.fitWidth,
+                imageErrorBuilder: (context, error, stackTrace) {
+                  return Image.asset(
+                    'assets/images/main_logo.png',
+                    fit: BoxFit.fitWidth,
+                  );
+                },
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 2.0),
               child: Text(
                 DateFormat.yMMMd().format(this.event.eventDate!),
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.openSans(
                   fontSize: 14.0,
                   color: Colors.grey[500],
                 ),
@@ -49,7 +56,7 @@ class EventTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 2.0),
               child: Text(
                 event.eventType!,
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.openSans(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -60,7 +67,7 @@ class EventTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 2.0),
               child: Text(
                 event.eventTitle!,
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.openSans(
                   fontSize: 14.0,
                   color: Colors.grey[500],
                 ),

@@ -1,5 +1,4 @@
 import 'package:dsc_client/authentication/GoogleSignIn.dart';
-import 'package:dsc_client/authentication/SignInCheck.dart';
 import 'package:dsc_client/authentication/Utils.dart';
 import 'package:dsc_client/screens/splash.dart';
 import 'package:dsc_client/utils/sharedPreferences.dart';
@@ -7,8 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'screens/eventDetails/eventDetails.dart';
-import 'screens/onBoardScreen/onBoardingPage.dart';
 import '../authentication/Utils.dart';
 
 bool isHomeScreen = true;
@@ -32,6 +29,7 @@ class DSC extends StatelessWidget {
         //App Theming
         theme: ThemeData(
           brightness: Brightness.light,
+          drawerTheme: DrawerThemeData(backgroundColor: Colors.grey.shade100),
           scaffoldBackgroundColor: Colors.white,
           primaryColor: Colors.blue.shade300,
           appBarTheme: AppBarTheme(
