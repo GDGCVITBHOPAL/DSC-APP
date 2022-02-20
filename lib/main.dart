@@ -40,11 +40,11 @@ class DSC extends StatelessWidget {
         darkTheme: ThemeData(
           brightness: Brightness.dark,
           drawerTheme: DrawerThemeData(backgroundColor: Colors.grey.shade900),
-          scaffoldBackgroundColor: Colors.black,
+          scaffoldBackgroundColor: Colors.grey.shade900,
           primaryColor: Colors.blue.shade200,
           cardColor: Colors.grey.shade800,
           appBarTheme: AppBarTheme(
-            color: Colors.black,
+            color: Colors.grey.shade900,
           ),
         ),
         themeMode: ThemeMode.system,

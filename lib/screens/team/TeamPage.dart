@@ -52,7 +52,9 @@ class _TeamState extends State<Team> {
               Tab(child: Text('WTM')),
             ],
             isScrollable: true,
-            indicatorColor: Colors.blue.shade200,
+            indicatorColor: Theme.of(context).brightness == Brightness.light
+                ? Colors.blue.shade500
+                : Colors.blue.shade300,
             labelColor: Theme.of(context).primaryColor,
             unselectedLabelColor: Colors.grey,
             labelStyle: GoogleFonts.rubik(

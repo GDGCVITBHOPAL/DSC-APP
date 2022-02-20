@@ -195,7 +195,7 @@ class _CarouselPageState extends State<CarouselPage> {
                           },
                           child: Container(
                             alignment: Alignment.center,
-                            height: 36.h,
+                            height: 35.h,
                             // Constructor Call #2
                             child: Text(
                               'Get Started',
