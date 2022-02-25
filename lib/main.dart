@@ -44,7 +44,6 @@ class DSC extends StatelessWidget {
           scaffoldBackgroundColor: Colors.grey.shade900,
           primaryColor: Colors.blue.shade200,
           cardColor: Colors.grey.shade800,
-          listTileTheme: ListTileThemeData(tileColor: Colors.grey.shade800),
           appBarTheme: AppBarTheme(
             color: Colors.grey.shade900,
           ),
