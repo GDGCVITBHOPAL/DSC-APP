@@ -8,6 +8,7 @@ import 'package:dsc_client/screens/requestEvents/requestEvent.dart';
 import 'package:dsc_client/screens/team/TeamPage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class navigate extends StatefulWidget {
@@ -36,11 +37,12 @@ class _navigateState extends State<navigate> {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(
-                  // color: Colors.white,
-                  ),
-              child: Image.asset(Assets.vitb_dsc_logo),
-            ),
+                decoration: BoxDecoration(
+                    // color: Colors.white,
+                    ),
+                child: Theme.of(context).brightness == Brightness.light
+                    ? Image.asset(Assets.vitb_dsc_logo)
+                    : Image.asset('assets/images/dark.png')),
             ListTile(
               title: const Text('About Us'),
               onTap: () {
@@ -72,7 +74,8 @@ class _navigateState extends State<navigate> {
         toolbarHeight: 80,
         elevation: 0,
         title: Container(
-            height: 80,
+            height: 80.h,
+            width: 250.w,
             child: Theme.of(context).brightness == Brightness.light
                 ? Image.asset(Assets.vitb_dsc_logo)
                 : Image.asset('assets/images/dark.png')
@@ -88,10 +91,11 @@ class _navigateState extends State<navigate> {
         data: NavigationBarThemeData(
           backgroundColor: Theme.of(context).brightness == Brightness.light
               ? Colors.grey.shade100
-              : Colors.grey.shade900,
+              : Colors.grey.shade800,
           indicatorColor: Theme.of(context).brightness == Brightness.light
-              ? Colors.blue.shade500
-              : Colors.blue.shade300,
+              ? Colors.blue.shade400
+              : Colors.blue.shade200,
+          //iconTheme: ,
           height: 70,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         ),
