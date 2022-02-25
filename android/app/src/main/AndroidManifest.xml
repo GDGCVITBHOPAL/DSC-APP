@@ -12,7 +12,7 @@
     </queries>
     <!-- END HERE -->
    <application
-        android:label="DSC VITBHOPAL"
+        android:label="GDSC VITB"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
